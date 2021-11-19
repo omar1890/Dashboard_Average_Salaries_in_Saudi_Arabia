@@ -74,8 +74,8 @@ fig2 = px.scatter(df, x="Salary", y="Degree Level", color="Gender", facet_col="G
 fig3 = px.bar(df,x='Degree Level',y='Salary',color="Gender",barmode="group",hover_data=['Nationality'])
 
 # Create a dash application
-app=dash.Dash("Project")
-app=dash.Dash(__name__, external_stylesheets =['https://codepen.io/chriddyp/pen/bWLwgP.css'])
+app=dash.Dash("Dashboard", external_stylesheets =['https://codepen.io/chriddyp/pen/bWLwgP.css'])
+server = app.server
 app.layout=html.Div([
                          html.H1('Average Salaries in Saudi Arabia Between 2017-2021',style={'color':'white','padding':'5px',"border":"2px black solid",'text-align':'center', 'font-size':85 ,'background':'#006C35'})
      ,html.Hr(style={'size':'50px'}),
@@ -171,6 +171,6 @@ def update_My_Div(gender,n_clicks):
 
     return fig1
 
-# Run the app
-if __name__ == '__main__':
-    app.run_server()
+# # Run the app
+# if __name__ == '__main__':
+#     app.run_server()
